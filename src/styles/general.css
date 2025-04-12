@@ -1,0 +1,96 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/* Farver */
+html {
+  --kea-black: #262625;
+  --kea-red: #e94e43;
+  --kea-white: #ffffff;
+  --kea-text-blue: #233249;
+  --kea-text-red: #e12619;
+  --circular_lab-orange: #ff671f;
+  --circular_lab-blue: #003b5c;
+}
+
+.roboto-condensed-bold {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Skrift styles */
+h1 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(36 * 1px + (66 - 36) * (100vw - 320px) / (1200 - 320));
+  font-weight: 700;
+  line-height: 0.98;
+  color: var(--kea-text-blue);
+}
+
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(24 * 1px + (32 - 24) * (100vw - 320px) / (1200 - 320));
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--kea-text-blue);
+}
+
+h3 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: calc(16 * 1px + (20 - 16) * (100vw - 320px) / (1200 - 320));
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--kea-text-blue);
+}
+
+h5 {
+  font-family: "Roboto", sans-serif;
+  font-size: alc(20 * 1px + (26 - 20) * (100vw - 320px) / (1200 - 320));
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: var(--kea-text-blue);
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--kea-text-blue);
+}
+
+a {
+  text-decoration: none;
+  color: var(--kea-text-blue);
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+a:hover {
+  color: var(--kea-text-red);
+}
