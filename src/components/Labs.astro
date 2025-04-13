@@ -1,0 +1,169 @@
+<section
+  class="grid"
+  style="margin-top: 40px"
+  data-aos="fade-left"
+  data-aos-delay="100"
+  data-aos-duration="1000"
+>
+  <section class="text_margin">
+    <article>
+      <h2>Adgang til labbet</h2>
+      <p>Circular Lab er åbent 8.30-22.00 hver dag. <br /> <br /></p>
+      <p>
+        Du er velkommen til at benytte lokalet til gruppearbejde eller andet. <a
+          href="#kalender">Tjek kalenderen</a
+        > for at se, om der er planlagt undervisning i lokalet. <br />
+        <br />
+      </p>
+      <p>
+        Der er adgang til Material Connexion igennem labbet, hvis du gerne vil
+        låne prøverne med i undervisning eller andet – så skriv venligst til <a
+          href="mailto:circular@kea.dk"></a><a href="mailto:circular@kea.dk"
+          >circular@kea.dk</a
+        >
+        <br />
+        <br />
+      </p>
+      <p>
+        Der vil løbende være udstillinger og cirkulære projekter på display i
+        labbet. Har du yderligere spørgsmål til disse, kan du også række ud til <a
+          href="#kontakt">lab manager Nikolaj Storm</a
+        >. <br />
+        <br />
+      </p>
+      <p>
+        Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med
+        gode samarbejdspartnere. Materialerne er på udstilling i labbet. Har du
+        spørgsmål til materialerne, indkøb eller virksomhederne, så <a
+          href="#kontakt">tag også fat i lab manager Nikolaj Storm</a
+        > for mere information.
+      </p>
+      <div class="box" style="margin-bottom: 40px">
+        <h2>Adresse</h2>
+        <p>
+          Circular Lab holder til på Guldbergsgade 29N, bygning A, <br />
+          lokale A129.
+        </p>
+        <img
+          src="https://mit.kea.dk/images/studieliv-faciliteter/labs/circular-labs/circular-lab/circular-lab-oversigt.png"
+          alt=""
+        />
+      </div>
+    </article>
+    <article style="padding-left: 2rem;" class="blue">
+      <h2>Material Connexion</h2>
+      <p>
+        Material ConneXion er et materialebibliotek, hvor du får den nyeste
+        viden indenfor materialer med 500 fysiske prøver og en tilhørende
+        database, som består af 10.000+ materialeprøver indenfor kategorierne
+        polymers, naturals, metals, glass, process, ceramics, cement-based og
+        carbon-based. Det er udvalgte prøver som er innovative, bæredygtige og
+        kommercielt tilgængelige materialer. <br /><br />
+      </p>
+      <p>
+        Husk at besøge det fysiske Material ConneXion-bibliotek på Campus
+        Guldbergsgade! <br /><br />
+      </p>
+      <p>
+        Du kan tilgå den&nbsp;<a
+          href="https://bibliotek.kea.dk/da/alle-ressourcer/material-connexion"
+          >digitale database som studerende og underviser på KEA via KEAs
+          Bibliotek</a
+        >
+        <br /><br />
+      </p>
+      <h3>Åbningstider i Material Connexion</h3>
+      <p>Mandag - fredag: kl. 8.30 - 22.00</p>
+      <p>
+        <a
+          href="https://bibliotek.kea.dk/da/digitale-ressourcer/material-connexion"
+          target="_blank"
+          rel="noopener"
+          type="button"
+          class="btn btn-primary btn-rounded btn-lg"
+          >Tilmeld dig Material Connexion</a
+        >
+      </p>
+      <div class="box">
+        <h2>Adresse</h2>
+        <p>
+          Circular Lab holder til på Guldbergsgade 29N, bygning A, <br />
+          lokale A129.
+        </p>
+        <img
+          src="https://mit.kea.dk/images/studieliv-faciliteter/labs/circular-labs/material-lab/Material-connexion-kort.png"
+          alt=""
+        />
+      </div>
+    </article>
+  </section>
+  <div class="background">
+    <div class="background1"></div>
+    <div class="background2"></div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-areas: "overlap"; /* Definer et enkelt område */
+    position: relative;
+  }
+
+  .background {
+    grid-area: overlap;
+    width: 1150px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: 1;
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .background1 {
+    background-color: var(--circular_lab-orange);
+    width: 50%;
+    height: 100%;
+  }
+  .background2 {
+    background-color: #1465b0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .text_margin {
+    grid-area: overlap; /* Placeres i samme område */
+    z-index: 2; /* Sørg for, at dette element er øverst */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .box {
+    background-color: white;
+    padding: 25px;
+    margin: 15px 100px;
+  }
+
+  article {
+    padding: 1rem;
+  }
+
+  .blue,
+  .blue h2,
+  .blue h3,
+  .blue p,
+  .blue a {
+    color: white;
+  }
+
+  .blue a:hover {
+    color: var(--kea-text-red);
+  }
+
+  .box h2,
+  .box p {
+    color: var(--kea-text-blue);
+  }
+</style>

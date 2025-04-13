@@ -13,6 +13,7 @@ img {
 
 :root {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Farver */
