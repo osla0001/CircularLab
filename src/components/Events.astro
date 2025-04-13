@@ -1,0 +1,137 @@
+---
+//@ts-nocheck
+import EventCard from "./EventCard.astro";
+
+const url = "https://bhfvhffdxxdjkhhsibss.supabase.co/rest/v1/events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJoZnZoZmZkeHhkamtoaHNpYnNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTEsImV4cCI6MjA1OTg0MzcxMX0.jaV8y7mTFT_UEzDdVByZP-2KfDB_-S98GRYthD5OY-M";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
+---
+
+<section data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+  <div class="blank_space"></div>
+  <div class="grid">
+    <section class="text_margin">
+      <div class="blank_space2"></div>
+      <h2>Events // Circular Lab</h2>
+      <p>
+        Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
+        Circular Lab. Vejledninger, foredrag, events og lignende vil løbende
+        blive lagt ind i kalenderen.
+      </p>
+      <div class="scroll-container">
+        <div class="scroll-box">
+          {data.map((event) => <EventCard {event} />)}
+        </div>
+      </div>
+      <div class="blank_space"></div>
+    </section>
+    <section class="background"></section>
+  </div>
+</section>
+
+<script>
+  function scrollLeft() {
+    const scrollBox = document.querySelector(".scroll-box");
+    console.log(scrollBox); // Tjek om scrollBox findes
+    if (scrollBox) {
+      scrollBox.scrollBy({ left: -240, behavior: "smooth" }); // Scroll tilbage
+    }
+  }
+
+  function scrollRight() {
+    const scrollBox = document.querySelector(".scroll-box");
+    console.log(scrollBox); // Tjek om scrollBox findes
+    if (scrollBox) {
+      scrollBox.scrollBy({ left: 240, behavior: "smooth" }); // Scroll frem
+    }
+  }
+</script>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-areas: "overlap"; /* Definer et enkelt område */
+    position: relative;
+  }
+
+  .background {
+    grid-area: overlap;
+    background-color: white;
+    width: 1150px;
+    height: 100%;
+    padding: 100px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  .text_margin {
+    grid-area: overlap; /* Placeres i samme område */
+    z-index: 2; /* Sørg for, at dette element er øverst */
+  }
+
+  .scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+
+  .scroll-box {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Aktiver horisontal scrolling */
+    scroll-behavior: smooth; /* Gør scroll jævn */
+    padding-right: 10px 0;
+  }
+
+  .scroll-box::-webkit-scrollbar {
+    height: 8px; /* Højde på scrollbaren */
+  }
+
+  .scroll-box::-webkit-scrollbar-thumb {
+    background-color: var(--kea-text-blue); /* Farve på scrollbaren */
+    border-radius: 4px; /* Rundede hjørner */
+  }
+
+  .scroll-box::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* Baggrund for scrollbaren */
+  }
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--kea-text-blue);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .scroll-button.left {
+    left: 0;
+  }
+
+  .scroll-button.right {
+    right: 0;
+  }
+
+  .scroll-button:hover {
+    background-color: var(--kea-text-red);
+  }
+
+  .blank_space2 {
+    margin: 20px;
+  }
+</style>
