@@ -99,3 +99,25 @@ a {
 a:hover {
   color: var(--kea-text-red);
 }
+
+/* General styles */
+body {
+  background-color: #ededed;
+}
+
+.blank_space {
+  margin: 40px;
+}
+
+.text_margin {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.horizontal_line {
+  width: 100%;
+  margin: 5px auto;
+  height: 1px;
+  background-color: var(--kea-text-blue);
+  opacity: 0.8;
+}

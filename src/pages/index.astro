@@ -2,14 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
+import Intro from "../components/Intro.astro";
 import "../styles/general.css";
-import "aos/dist/aos.css";
-import AOSInit from "../components/AOSInit.jsx";
 ---
 
 <Layout>
   <Header />
   <Hero />
+  <Intro />
 </Layout>
 
 <style>
@@ -17,7 +17,3 @@ import AOSInit from "../components/AOSInit.jsx";
     height: 500px;
   }
 </style>
-
-<!-- data-aos="fade-right"
-data-aos-delay="100"
-data-aos-duration="1000" -->
