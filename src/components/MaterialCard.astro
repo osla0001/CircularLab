@@ -1,0 +1,30 @@
+---
+//@ts-ignore
+const { material, material_id } = Astro.props;
+---
+
+<article>
+  <a href={material_id}> <img class="hover" src={material.img} /></a>
+</article>
+
+<style>
+  img {
+    width: 250px;
+    height: auto;
+    transition: 0.3s;
+  }
+
+  .hover:hover {
+    scale: 1.02;
+    transition: 0.3s;
+  }
+
+  article {
+    width: 240px;
+    height: fit-content;
+    padding: 5px;
+    transition: 0.3s;
+    display: flex;
+    margin-bottom: 10px;
+  }
+</style>
