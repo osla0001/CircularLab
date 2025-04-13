@@ -1,0 +1,80 @@
+---
+//@ts-ignore
+const { event } = Astro.props;
+
+function formatDate(dateString: string) {
+  // Tilføj 'string' som type
+  const date = new Date(dateString);
+  return date
+    .toLocaleDateString("da-DK", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    })
+    .toUpperCase(); // Får APRIL i stedet for april
+}
+function formatTime(timeString: string) {
+  // Split tid ved kolon og fjern sekunder
+  const [hours, minutes] = timeString.split(":");
+  return `${hours}:${minutes}`; // Returner kun timer og minutter
+}
+---
+
+<article class="event_card">
+  <div>
+    <img src={event.event_img} />
+    <h2>{event.event_title}</h2>
+    <h3>
+      {formatDate(event.event_date)}
+      {formatTime(event.event_start_time)} - {formatTime(event.event_end_time)}
+    </h3>
+    <p>{event.event_description}</p>
+  </div>
+  <div>
+    <a href="">→Læs mere her</a>
+  </div>
+</article>
+
+<style>
+  .event_card {
+    width: 240px;
+    height: 400px;
+    padding: 5px;
+    background-color: #ededed;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+
+  .event_card img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border: 1px solid #9e9e9e;
+  }
+
+  .event_card:hover {
+    scale: 1.02;
+    transition: 0.3s;
+  }
+
+  h2 {
+    margin: 5px 0;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  h3 {
+    font-size: 11px;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+
+  a {
+    font-size: 18px;
+  }
+</style>
