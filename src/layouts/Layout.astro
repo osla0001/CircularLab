@@ -1,3 +1,7 @@
+---
+import AOSInit from "../components/AOSInit.jsx"; // Juster stien hvis nødvendigt
+---
+
 <!doctype html>
 <html lang="da">
   <head>
@@ -17,15 +21,7 @@
     <title>Circular Lab - Mit KEA</title>
   </head>
   <body>
+    <AOSInit client:load />
     <slot />
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>

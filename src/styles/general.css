@@ -83,6 +83,10 @@ p {
   color: var(--kea-text-blue);
 }
 
+.p2 {
+  font-size: 26px;
+}
+
 a {
   text-decoration: none;
   color: var(--kea-text-blue);
