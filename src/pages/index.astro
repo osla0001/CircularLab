@@ -1,15 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 import "../styles/general.css";
+import "aos/dist/aos.css";
+import AOSInit from "../components/AOSInit.jsx";
 ---
 
 <Layout>
   <Header />
-  <h1>Welcome to Astro!</h1>
-  <h2>Hej</h2>
-  <h3>Hej</h3>
-  <p>This is a simple example of an Astro page.</p>
-  <p>Feel free to explore the code and customize it to your liking.</p>
-  <a href="">Hej</a>
+  <Hero />
 </Layout>
+
+<style>
+  .margin {
+    height: 500px;
+  }
+</style>
+
+<!-- data-aos="fade-right"
+data-aos-delay="100"
+data-aos-duration="1000" -->
