@@ -8,6 +8,11 @@
     <a href="" class="red_a">Kea.dk</a>
   </div>
   <div class="main">
+    <figure class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </figure>
     <figure class="kea">
       <a href="" class="logo">
         <img src="/kea_logo.svg" alt="" />
@@ -137,5 +142,38 @@
     padding: 22px;
     stroke: #ffffff;
     stroke-width: 1px;
+  }
+
+  .lines {
+    display: none;
+  }
+
+  @media (max-width: 1070px) {
+    .extra {
+      display: none;
+    }
+
+    .nav_hover {
+      display: none;
+    }
+
+    .kea {
+      background-color: transparent;
+      filter: brightness(100);
+    }
+
+    .lines {
+      display: block;
+      align-content: center;
+      place-items: center;
+      aspect-ratio: 1/1;
+    }
+
+    .line {
+      width: 25px;
+      height: 2px;
+      background-color: white;
+      margin: 5px;
+    }
   }
 </style>

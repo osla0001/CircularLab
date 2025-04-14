@@ -104,6 +104,7 @@ a:hover {
 /* General styles */
 body {
   background-color: #ededed;
+  overflow-x: hidden;
 }
 
 .blank_space {
@@ -125,4 +126,11 @@ body {
   height: 1px;
   background-color: var(--kea-text-blue);
   opacity: 0.8;
+}
+
+/* Mobilversion */
+@media (max-width: 800px) {
+  .text_margin {
+    padding: 0 15px;
+  }
 }
