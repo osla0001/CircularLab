@@ -4,7 +4,9 @@ const { material, material_id } = Astro.props;
 ---
 
 <article>
-  <a href={material_id}> <img class="hover" src={material.img} /></a>
+  <a href={material_id}>
+    <img class="hover" src={material.img} alt="Material Card" /></a
+  >
 </article>
 
 <style>
