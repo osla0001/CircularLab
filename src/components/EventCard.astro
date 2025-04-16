@@ -20,20 +20,24 @@ function formatTime(timeString: string) {
 }
 ---
 
-<article class="event_card">
-  <div>
-    <img src={event.event_img} alt="Event i Circular Lab" />
-    <h2>{event.event_title}</h2>
-    <h3>
-      {formatDate(event.event_date)}
-      {formatTime(event.event_start_time)} - {formatTime(event.event_end_time)}
-    </h3>
-    <p>{event.event_description}</p>
-  </div>
-  <div>
-    <a href=`/events/${event.id}`>→Læs mere her</a>
-  </div>
-</article>
+<a href={`/events/${event.id}`} class="event_card_link">
+  <article class="event_card">
+    <div>
+      <img src={event.event_img} alt="Event i Circular Lab" />
+      <h2>{event.event_title}</h2>
+      <h3>
+        {formatDate(event.event_date)}
+        {formatTime(event.event_start_time)} - {
+          formatTime(event.event_end_time)
+        }
+      </h3>
+      <p>{event.event_description}</p>
+    </div>
+    <div>
+      <span>→Læs mere her</span>
+    </div>
+  </article>
+</a>
 
 <style>
   .event_card {

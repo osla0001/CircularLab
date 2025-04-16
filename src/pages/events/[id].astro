@@ -70,11 +70,11 @@ const { event, eventTitle } = Astro.props;
     <section class="breadcrumb">
       <a href="">Forside</a> /
       <a href="">Kalender</a> /
-      <a href="">Circular Lab - event Catalog</a> /
+      <a href="">Circular Lab - Event Catalog</a> /
       <a href=""><span class="current">{eventTitle}</span></a>
     </section>
     <!-- /// -->
-     <div class="blank_space"></div>
+    <div class="blank_space"></div>
 
     <h1>
       {eventTitle}
@@ -82,21 +82,19 @@ const { event, eventTitle } = Astro.props;
     <p class="timeinfo">
       {formatDate(event.event_date)}
       {formatTime(event.event_start_time)} - {formatTime(event.event_end_time)}
-      <br><a href="">Tilmeld dig på safeticket.dk</a>
-      
+      <br /><a href="">Tilmeld dig på safeticket.dk</a>
     </p>
     <div class="blank_space"></div>
 
     <p class="p2 capitalize">{event.event_type}</p>
-    <p>
+    <p style="margin-bottom: 50px;">
       {event.event_description}
     </p>
-    
   </article>
 </Layout>
 
 <!-- <Footer notopmargin=`notopmargin` /> -->
-<Footer notopmargin=`` />
+<Footer />
 
 <style>
   .capitalize {
