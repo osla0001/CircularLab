@@ -35,10 +35,13 @@ const { material } = Astro.props;
 <Layout Layout layouttitle=`Material #${material.num}`>
   <Header />
   <article class="materialsection">
-    <img src={material.img} class="materialimg"
-    data-aos="fade-top"
-    data-aos-delay="100"
-    data-aos-duration="1000" />
+    <img
+      src={material.img}
+      class="materialimg"
+      data-aos="fade-top"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    />
     <div
       class="materialcontent text_margin"
       data-aos="fade-right"
@@ -46,23 +49,23 @@ const { material } = Astro.props;
       data-aos-duration="1000"
     >
       <!-- Taget fra Breadcrumb.astro: -->
-      <section class="breacrumb"
-      data-aos="fade-bottom"
-    data-aos-delay="100"
-    data-aos-duration="1000">
+      <section
+        class="breacrumb"
+        data-aos="fade-bottom"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+      >
         <a href="">Forside</a> /
-        <a href="">Kalender</a> /
-        <a href="">Circular Lab - Material Catalog</a> /
+        <a href="">Circular Lab - Catalog</a> /
         <a href=""><span class="current">{material.num}</span></a>
       </section>
       <!-- /// -->
       <div class="blank_space"></div>
 
       <h1>
-        Material ConneXion <br />
+        Material Conne<span class="x">X</span>ion <br />
         <span class="materialnumb">Material #{material.num}</span>
       </h1>
-
 
       <h2>Lorem Ipsum</h2>
       <p class="p2">The standard Lorem Ipsum passage, used since the 1500s</p>
@@ -152,6 +155,10 @@ const { material } = Astro.props;
     height: 100cqh;
     width: 5cqw;
     justify-content: space-between;
+  }
+
+  .x {
+    color: #852a2a;
   }
 
   p.copyrightinfo {
