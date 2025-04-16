@@ -53,11 +53,11 @@ const { event, eventTitle } = Astro.props;
   <Header />
   <section
     class="eventhero"
+    style={`background-image: url(${event.event_img});`}
     data-aos="fade-left"
     data-aos-delay="100"
     data-aos-duration="1000"
   >
-    <img src={event.event_img} class="eventimg" />
   </section>
 
   <article
@@ -70,7 +70,7 @@ const { event, eventTitle } = Astro.props;
     <section class="breadcrumb">
       <a href="">Forside</a> /
       <a href="">Kalender</a> /
-      <a href="">Circular Lab - Event Catalog</a> /
+      <a href="">Circular Lab - event Catalog</a> /
       <a href=""><span class="current">{eventTitle}</span></a>
     </section>
     <!-- /// -->
@@ -87,27 +87,25 @@ const { event, eventTitle } = Astro.props;
     <div class="blank_space"></div>
 
     <p class="p2 capitalize">{event.event_type}</p>
-    <p style="margin-bottom: 50px;">
+    <p>
       {event.event_description}
     </p>
   </article>
 </Layout>
 
 <!-- <Footer notopmargin=`notopmargin` /> -->
-<Footer />
+<Footer notopmargin=`` />
 
 <style>
   .capitalize {
     text-transform: capitalize;
   }
   section.eventhero {
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: 350px;
     overflow: hidden;
-  }
-  img.eventimg {
-    transform: translateY(-50cqh);
-    width: 100vw;
+    background-size: cover;
+    background-position: center;
   }
 
   footer {
@@ -150,6 +148,9 @@ const { event, eventTitle } = Astro.props;
 
     section.breadcrumb {
       gap: 6px;
+    }
+    section.eventhero {
+      height: 200px;
     }
   }
 </style>
