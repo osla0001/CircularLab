@@ -1,0 +1,157 @@
+---
+//@ts-nocheck
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/general.css";
+
+export async function getStaticPaths() {
+  const url =
+    "https://bhfvhffdxxdjkhhsibss.supabase.co/rest/v1/events?select=*";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJoZnZoZmZkeHhkamtoaHNpYnNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTEsImV4cCI6MjA1OTg0MzcxMX0.jaV8y7mTFT_UEzDdVByZP-2KfDB_-S98GRYthD5OY-M";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const data = await fetch(url, options).then((res) => res.json());
+  console.log;
+  data;
+
+  return data.map((event) => {
+    const eventTitle = event.event_title.replace("Circular Lab - ", "");
+    return {
+      params: { id: event.id },
+      props: { event, eventTitle },
+    };
+  });
+}
+function formatDate(dateString: string) {
+  // Tilføj 'string' som type
+  const date = new Date(dateString);
+  return date
+    .toLocaleDateString("da-DK", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
+    })
+    .toUpperCase(); // Får APRIL i stedet for april
+}
+function formatTime(timeString: string) {
+  // Split tid ved kolon og fjern sekunder
+  const [hours, minutes] = timeString.split(":");
+  return `${hours}:${minutes}`; // Returner kun timer og minutter
+}
+
+const { event, eventTitle } = Astro.props;
+---
+
+<Layout Layout layouttitle=`${eventTitle} | Circular Labs`>
+  <Header />
+  <section
+    class="eventhero"
+    data-aos="fade-left"
+    data-aos-delay="100"
+    data-aos-duration="1000"
+  >
+    <img src={event.event_img} class="eventimg" />
+  </section>
+
+  <article
+    class="text_margin"
+    data-aos="fade-right"
+    data-aos-delay="100"
+    data-aos-duration="1000"
+  >
+    <!-- Taget fra Breadcrumb.astro: -->
+    <section class="breadcrumb">
+      <a href="">Forside</a> /
+      <a href="">Kalender</a> /
+      <a href="">Circular Lab - event Catalog</a> /
+      <a href=""><span class="current">{eventTitle}</span></a>
+    </section>
+    <!-- /// -->
+     <div class="blank_space"></div>
+
+    <h1>
+      {eventTitle}
+    </h1>
+    <p class="timeinfo">
+      {formatDate(event.event_date)}
+      {formatTime(event.event_start_time)} - {formatTime(event.event_end_time)}
+      <br><a href="">Tilmeld dig på safeticket.dk</a>
+      
+    </p>
+    <div class="blank_space"></div>
+
+    <p class="p2 capitalize">{event.event_type}</p>
+    <p>
+      {event.event_description}
+    </p>
+    
+  </article>
+</Layout>
+
+<!-- <Footer notopmargin=`notopmargin` /> -->
+<Footer notopmargin=`` />
+
+<style>
+  .capitalize {
+    text-transform: capitalize;
+  }
+  section.eventhero {
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;
+  }
+  img.eventimg {
+    transform: translateY(-50cqh);
+    width: 100vw;
+  }
+
+  footer {
+    margin-top: 0 !important;
+  }
+  .margin {
+    height: 500px;
+  }
+
+  section.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  .current {
+    color: gray;
+    cursor: default;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    transform: scale(85%);
+    height: 100cqh;
+    width: 5cqw;
+    justify-content: space-between;
+  }
+
+  p.timeinfo {
+    font-size: 110%;
+    font-weight: 600;
+    margin-top: 10px;
+    opacity: 90%;
+  }
+  @media (max-width: 800px) {
+    section.breadcrumb a {
+      font-size: 9px;
+    }
+
+    section.breadcrumb {
+      gap: 6px;
+    }
+  }
+</style>

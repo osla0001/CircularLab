@@ -1,4 +1,7 @@
-<footer style="margin-top: 100px;">
+---
+const {notopmargin} = Astro.props
+---
+<footer class={ notopmargin }>
   <section class="grid_1-1-1-1 text_margin" style="padding-top: 50px;">
     <div class="justify">
       <h3>KEA - Københavns Erhvervsakademi</h3>
@@ -73,6 +76,11 @@
   footer {
     background-color: var(--kea-text-blue);
     height: 435px;
+    margin-top: 100px;
+  }
+  footer.notopmargin{
+    margin-top: 0;
+
   }
 
   footer h2,
