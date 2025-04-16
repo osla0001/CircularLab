@@ -1,0 +1,171 @@
+---
+//@ts-nocheck
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/general.css";
+
+export async function getStaticPaths() {
+  const url =
+    "https://bhfvhffdxxdjkhhsibss.supabase.co/rest/v1/materials?select=*";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJoZnZoZmZkeHhkamtoaHNpYnNzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTEsImV4cCI6MjA1OTg0MzcxMX0.jaV8y7mTFT_UEzDdVByZP-2KfDB_-S98GRYthD5OY-M";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const data = await fetch(url, options).then((res) => res.json());
+  console.log;
+  data;
+
+  return data.map((material) => {
+    return {
+      params: { id: material.id },
+      props: { material },
+    };
+  });
+}
+
+const { material } = Astro.props;
+---
+
+<Layout Layout layouttitle=`Material #${material.num}`>
+  <Header />
+  <article class="materialsection">
+    <img src={material.img} class="materialimg"
+    data-aos="fade-top"
+    data-aos-delay="100"
+    data-aos-duration="1000" />
+    <div
+      class="materialcontent text_margin"
+      data-aos="fade-right"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+    >
+      <!-- Taget fra Breadcrumb.astro: -->
+      <section class="breacrumb"
+      data-aos="fade-bottom"
+    data-aos-delay="100"
+    data-aos-duration="1000">
+        <a href="">Forside</a> /
+        <a href="">Kalender</a> /
+        <a href="">Circular Lab - Material Catalog</a> /
+        <a href=""><span class="current">{material.num}</span></a>
+      </section>
+      <!-- /// -->
+      <div class="blank_space"></div>
+
+      <h1>
+        Material ConneXion <br />
+        <span class="materialnumb">Material #{material.num}</span>
+      </h1>
+
+
+      <h2>Lorem Ipsum</h2>
+      <p class="p2">The standard Lorem Ipsum passage, used since the 1500s</p>
+      <p>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum."
+      </p>
+      <p class="copyrightinfo">
+        Material Tabula® 2016© Material ConneXion® Inc. New York
+      </p>
+    </div>
+    <div class="flex">
+      <figure>
+        <img src="../../../public/biodegradable.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/low_carbon_footprint.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/recycled_contet.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/lightweight.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/easily_recyclable.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/compostable.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/renewable_content.svg" alt="" />
+      </figure>
+      <figure>
+        <img src="../../../public/low_toxicity.svg" alt="" />
+      </figure>
+    </div>
+  </article>
+
+  <Footer notopmargin=`notopmargin` />
+</Layout>
+<style>
+  img.materialimg {
+    height: 100vh;
+    width: auto !important;
+  }
+
+  article.materialsection {
+    display: flex;
+    flex-direction: row;
+  }
+
+  span.materialnumb {
+    font-size: 90%;
+    font-weight: 500;
+  }
+  footer {
+    margin-top: 0 !important;
+  }
+  .margin {
+    height: 500px;
+  }
+  .materialcontent {
+    margin: 2vw;
+    width: 60vw;
+  }
+  section.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  .current {
+    color: gray;
+    cursor: default;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+    transform: scale(85%);
+    height: 100cqh;
+    width: 5cqw;
+    justify-content: space-between;
+  }
+
+  p.copyrightinfo {
+    margin-top: 5%;
+    font-size: 80%;
+    opacity: 60%;
+  }
+  @media (max-width: 800px) {
+    section.breadcrumb a {
+      font-size: 9px;
+    }
+
+    section.breadcrumb {
+      gap: 6px;
+    }
+  }
+</style>

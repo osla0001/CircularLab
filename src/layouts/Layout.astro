@@ -1,5 +1,6 @@
 ---
 import AOSInit from "../components/AOSInit.jsx";
+const {layouttitle} = Astro.props
 ---
 
 <!doctype html>
@@ -38,7 +39,7 @@ import AOSInit from "../components/AOSInit.jsx";
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Circular Lab - Mit KEA</title>
+    <title>{layouttitle}</title>
   </head>
   <body>
     <AOSInit client:load />
