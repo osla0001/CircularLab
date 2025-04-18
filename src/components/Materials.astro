@@ -23,7 +23,7 @@ console.log(data);
     <div class="text_margin">
         <div class="blank_space2"></div>
         <h2>Catalog // Circular Lab</h2>
-        <p>Hos Circular Lab har vi stort fokus på bæredygtige ressourcer og innovative metoder til at genanvende materialer, der ellers ville blive kasseret. Vi arbejder målrettet med at finde nye anvendelser for restmaterialer og overskud fra produktion, som stadig rummer stor værdi. Her på siden finder du et katalog over de forskellige materialer, vi aktuelt arbejder med og prioriterer i vores projekter.</p>
+        <p style="max-width: 100vw;">Hos Circular Lab har vi stort fokus på bæredygtige ressourcer og innovative metoder til at genanvende materialer, der ellers ville blive kasseret. Vi arbejder målrettet med at finde nye anvendelser for restmaterialer og overskud fra produktion, som stadig rummer stor værdi. Her på siden finder du et katalog over de forskellige materialer, vi aktuelt arbejder med og prioriterer i vores projekter.</p>
 <div class="scroll-container">
   <div class="scroll-box">
     {data.map((material) => <MaterialCard {material} material_id=`/materials/${material.id}` />)}
@@ -68,6 +68,7 @@ console.log(data);
           display: flex;
           gap: 20px;
           overflow-x: auto; /* Aktiver horisontal scrolling */
+          overflow-y: hidden; /* Deaktiver vertikal scrolling */
           scroll-behavior: smooth; /* Gør scroll jævn */
           padding-right: 10px 0;
           margin-bottom: 50px;
@@ -87,6 +88,16 @@ console.log(data);
           background-color: #E0E0E0; /* Baggrund for scrollbaren */
         }
       
+
+  @media (max-width: 1130px) {
+    .background {
+      display: none;
+    }
+
+    .grid {
+      background-color: white;
+    }
+  }
 
       </style>
       
