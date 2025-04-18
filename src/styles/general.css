@@ -129,8 +129,9 @@ body {
 }
 
 /* Mobilversion */
-@media (max-width: 800px) {
+@media (max-width: 1130px) {
   .text_margin {
     padding: 0 15px;
+    max-width: none;
   }
 }

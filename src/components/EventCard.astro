@@ -45,7 +45,6 @@ function formatTime(timeString: string) {
     height: 400px;
     padding: 5px;
     background-color: #ededed;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     transition: 0.3s;
     display: flex;
     flex-direction: column;
@@ -68,17 +67,31 @@ function formatTime(timeString: string) {
 
   h2 {
     margin: 5px 0;
-    font-size: 18px;
+    font-size: calc(
+      16px + (18 - 16) * (100vw - 320px) / (1200 - 320)
+    ); /* Dynamisk font-størrelse */
     line-height: 22px;
   }
 
   h3 {
-    font-size: 11px;
+    font-size: calc(
+      9px + (11 - 9) * (100vw - 320px) / (1200 - 320)
+    ); /* Dynamisk font-størrelse */
     font-weight: 300;
     margin-bottom: 5px;
   }
 
   a {
-    font-size: 18px;
+    font-size: calc(
+      16px + (18 - 16) * (100vw - 320px) / (1200 - 320)
+    ); /* Dynamisk font-størrelse */
+  }
+
+  p {
+    font-size: calc(
+      13px + (15 - 13) * (100vw - 320px) / (1200 - 320)
+    ); /* Dynamisk font-størrelse */
+    line-height: 1.5;
+    margin-top: 5px;
   }
 </style>
