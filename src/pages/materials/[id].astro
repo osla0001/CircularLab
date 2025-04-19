@@ -166,7 +166,31 @@ const { material } = Astro.props;
     font-size: 80%;
     opacity: 60%;
   }
+  .flex {
+    display: flex;
+    flex-direction: column;
+    transform: scale(85%);
+    height: 100cqh;
+    width: 5cqw;
+    justify-content: space-between;
+  }
   @media (max-width: 800px) {
+    article.materialsection {
+      flex-direction: column;
+    }
+    article.materialsection img {
+      height: 70vh;
+
+      object-fit: contain;
+      object-position: center;
+      margin: 10%;
+    }
+
+    .materialcontent {
+      margin: 2vw;
+      width: 100vw;
+    }
+
     section.breadcrumb a {
       font-size: 9px;
     }
@@ -174,5 +198,21 @@ const { material } = Astro.props;
     section.breadcrumb {
       gap: 6px;
     }
+
+    .flex {
+      display: flex;
+      flex-direction: row;
+      height: 20cqw;
+      width: 100cqw;
+      justify-content: space-between;
+    }
+
+    .flex figure {
+      transform: scale(90%);
+    }
+    .flex figure img {
+      object-position: top;
+    }
   }
+  
 </style>
