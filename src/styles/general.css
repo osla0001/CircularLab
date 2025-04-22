@@ -132,6 +132,5 @@ body {
 @media (max-width: 1130px) {
   .text_margin {
     padding: 0 15px;
-    max-width: none;
   }
 }
