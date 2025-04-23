@@ -301,5 +301,33 @@ AOS kan instilleres i dit VS code projekt via NPM:
 `npm install aos --save`
 
 ## Supabase
+I dette forløb har vi haft fokus på Supabase - en hjemmeside som man kan lave databaser på. Her har vi haft i sinde at lave 2 forskellige api’er; et til events og et til material connexion kort. Material Connexion biblioteket deler lokale med Circular Lab. Derfor, har vi valgt at have et katalog hvor man kan tilgå de forskellige materialer og blive inspireret. Vores databaser er opbygget således:
+
+Vi startede med at en af os lavede en [Supabase konto](https://supabase.com) og inviterede resten af gruppen, igennem deres Github konti.
+### Supabase - Table editor
+Vi gik ind i Supabase's *"Table editor"* lavede to nye tabeller; en for materialer og en for events. Da vi lavede hver af dem, sørgede vi for at indstillingen *"Row Level Security (RLS)"* var slået til. Vi tilføjede herefter de kolonner der var nødvendige (f.eks, en "name" kolonne for navnet på objektet etc). Lad dem Supabase automatisk oprettede førhen blive, med mindre du ved hvad du gør! 
+
+### Supabase - Datatyper
+Når du laver en ny kolonne i Supabase's table editor kan du vælge bestemte datatyper - Her er nogle af den.
+
+**varchar**
+
+God for kortere tekst (f.eks navne)
+
+**text**
+
+God for længere tekst (f.eks beskrivelse)
+
+**float og int**
+
+Disse opbevarer numerisk data.
+
+**float** kan indeholde decimaler *(med amerikanse kommatal, punktum (.) i stedet for komma (,))!*
+
+**Int** opbevarer kune hele numre.
+
+Hver kolonne indeholder de datatyper som en "entry" kan indeholder, og hver række indeholder dataen per "entry".
+
+
 
 
